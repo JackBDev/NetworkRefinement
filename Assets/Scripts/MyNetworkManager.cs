@@ -16,6 +16,16 @@ public class MyNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
 
+        Color newColor = new Color(
+            Random.Range(0f, 1f),
+            Random.Range(0f, 1f),
+            Random.Range(0f, 1f));
+
+        MyNetworkPlayer player = conn.identity.GetComponent<MyNetworkPlayer>();
+
+        player.SetDisplayName($"Player {numPlayers}");
+        player.SetPlayerColor(newColor);
+
         Debug.Log($"There are now {numPlayers} player(s) connected to the server.");
     }
 }
