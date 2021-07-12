@@ -22,7 +22,7 @@ public class MyNetworkManager : NetworkManager
             Random.Range(0f, 1f));
 
         MyNetworkPlayer player = conn.identity.GetComponent<MyNetworkPlayer>();
-
+        
         player.SetDisplayName($"Player {numPlayers}");
         player.SetPlayerColor(newColor);
 
